@@ -22,7 +22,7 @@ export default function Cart() {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
       const payload = {
         total_amount: totalCost,
-        shipping_address: user.city || 'Default Address, AutoPrice HQ',
+        shipping_address: (user as any).city || 'Default Address, AutoPrice HQ',
         items: cart.map(item => ({
           part_id: item.part_id,
           quantity: item.quantity,
