@@ -22,7 +22,7 @@ router.post('/register', async (req, res) => {
       const user = await db.get(`SELECT id, email, name FROM users WHERE id = ?`, [result.lastID]);
       res.status(201).json(user);
     } catch (dbErr) {
-      if (dbErr.message.includes('UNIQUE constraint failed')) {
+      if (dbErr.message.includes('UNIQUE constraint failed') || dbErr.code === '23505') {
         return res.status(400).json({ error: 'Email identifier already in use.' });
       }
       throw dbErr;

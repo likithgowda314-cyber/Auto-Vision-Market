@@ -8,10 +8,8 @@ async function initDb() {
   let schema = fs.readFileSync(path.join(__dirname, '../schema.sql'), 'utf-8');
   let seed = fs.readFileSync(path.join(__dirname, '../seed.sql'), 'utf-8');
 
-  // Convert Postgres syntax to SQLite syntax
-  schema = schema.replace(/SERIAL PRIMARY KEY/g, 'INTEGER PRIMARY KEY AUTOINCREMENT');
-  // SQLite doesn't strictly need VARCHAR sizes but accepts them. 
-  // It handles TIMESTAMP DEFAULT CURRENT_TIMESTAMP fine.
+  // No longer needed to convert to SQLite
+  // schema = schema.replace(/SERIAL PRIMARY KEY/g, 'INTEGER PRIMARY KEY AUTOINCREMENT');
 
   console.log('Running schema...');
   await db.exec(schema);
@@ -21,7 +19,7 @@ async function initDb() {
     await db.exec(seed);
     console.log('Database initialized successfully.');
   } catch (e) {
-    if (e.message.includes('UNIQUE constraint failed') || e.message.includes('PRIMARY KEY')) {
+    if (e.message.includes('UNIQUE constraint failed') || e.message.includes('PRIMARY KEY') || e.code === '23505') {
       console.log('Data might already be seeded.');
     } else {
       console.error('Error seeding data:', e);
