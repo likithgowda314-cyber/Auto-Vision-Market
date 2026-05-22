@@ -19,7 +19,9 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center space-x-6 text-sm font-medium">
-          <Link href="/price-comparison" className="text-gray-600 hover:text-blue-600 transition">Parts</Link>
+          <Link href="/price-comparison" className="text-gray-600 hover:text-blue-600 transition">OEM Parts</Link>
+          <Link href="/refurbished-market" className="text-gray-600 hover:text-blue-600 transition">Refurbished Market</Link>
+          <Link href="/sell-part" className="text-gray-600 hover:text-blue-600 transition">Sell Part</Link>
           <Link href="/ai-damage-detection" className="text-gray-600 hover:text-blue-600 transition">AI Damage</Link>
           
           <Link href="/cart" className="relative text-gray-600 hover:text-blue-600 transition flex items-center gap-1">

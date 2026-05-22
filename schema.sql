@@ -20,6 +20,10 @@ CREATE TABLE parts (
     availability VARCHAR(50) DEFAULT 'In Stock',
     monthly_demand INTEGER DEFAULT 0,
     popularity INTEGER DEFAULT 0,
+    condition VARCHAR(50) DEFAULT 'New',
+    seller_id INTEGER REFERENCES users(id),
+    description TEXT,
+    image_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
