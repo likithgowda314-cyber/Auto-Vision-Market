@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { AuthContext } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 
+import { CartContext } from '../context/CartContext';
+
 export default function PriceComparison() {
   const [make, setMake] = useState('Maruti');
   const [model, setModel] = useState('Swift');
@@ -11,7 +13,7 @@ export default function PriceComparison() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const { addToCart } = useContext(require('../context/CartContext').CartContext);
+  const { addToCart } = useContext(CartContext);
 
   const fetchVehicleParts = async () => {
     setLoading(true);
