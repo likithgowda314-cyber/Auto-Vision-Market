@@ -2,7 +2,10 @@ node_modules/
 backend/node_modules/
 frontend/node_modules/
 frontend/.next/
-Ai/venv/
-Ai/__pycache__/
+ai/venv/
+ai/__pycache__/
 .env
 .DS_Store
+*.db
+*.sqlite
+*.sqlite3

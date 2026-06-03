@@ -5,8 +5,8 @@ const { getDb } = require('./db');
 async function initDb() {
   const db = await getDb();
   
-  let schema = fs.readFileSync(path.join(__dirname, '../schema.sql'), 'utf-8');
-  let seed = fs.readFileSync(path.join(__dirname, '../seed.sql'), 'utf-8');
+  let schema = fs.readFileSync(path.join(__dirname, 'db/schema.sql'), 'utf-8');
+  let seed = fs.readFileSync(path.join(__dirname, 'db/seed.sql'), 'utf-8');
 
   // No longer needed to convert to SQLite
   // schema = schema.replace(/SERIAL PRIMARY KEY/g, 'INTEGER PRIMARY KEY AUTOINCREMENT');

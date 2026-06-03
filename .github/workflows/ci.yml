@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./BackEnd
+        working-directory: ./backend
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Ai
+        working-directory: ./ai
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python

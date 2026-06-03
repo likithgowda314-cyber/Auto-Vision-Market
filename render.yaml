@@ -3,7 +3,7 @@ services:
     name: autoprice-backend
     env: node
     plan: free
-    rootDir: BackEnd
+    rootDir: backend
     buildCommand: npm install
     startCommand: node init_db.js && npm start
     envVars:
@@ -18,7 +18,7 @@ services:
     name: autoprice-ai
     env: python
     plan: free
-    rootDir: Ai
+    rootDir: ai
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:

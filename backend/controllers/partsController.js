@@ -4,7 +4,7 @@ exports.getAllParts = async (req, res) => {
   try {
     const db = await getDb();
     const { category, make, model, minPrice, maxPrice } = req.query;
-    let query = 'SELECT * FROM parts WHERE (condition = \\'New\\' OR condition IS NULL)';
+    let query = "SELECT * FROM parts WHERE (condition = 'New' OR condition IS NULL)";
     const values = [];
     
     if (category) {
