@@ -4,8 +4,8 @@ services:
     env: node
     plan: free
     rootDir: BackEnd
-    buildCommand: npm install && node init_db.js
-    startCommand: npm start
+    buildCommand: npm install
+    startCommand: node init_db.js && npm start
     envVars:
       - key: DATABASE_URL
         fromDatabase:
