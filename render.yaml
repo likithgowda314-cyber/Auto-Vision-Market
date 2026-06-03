@@ -18,7 +18,7 @@ services:
     name: autoprice-ai
     env: python
     plan: free
-    rootDir: ai
+    rootDir: Ai
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
